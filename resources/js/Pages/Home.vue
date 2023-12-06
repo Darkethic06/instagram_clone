@@ -1,6 +1,6 @@
 <script setup>
 import MainLayout from '@/Layouts/MainLayout.vue'
-import LikeSection from '@/Components/LikeSeection.vue'
+import LikeSection from '@/Components/LikeSection.vue'
 import { ref, onMounted, toRefs } from 'vue';
 import { Head, Link, router } from '@inertiajs/vue3';
 
@@ -29,7 +29,7 @@ onMounted(() => {
     <Head title="Home" />
     <MainLayout>
         <div class="mx-auto lg:pl-0 md:pl-[80px] pl-0">
-            <Carousel v-model="currentSlide" class="max-w-[700px] mx-auto" :items-to-show="wWidth >= 768 ? 8 : 6"
+            <Carousel v-model="currentSlide" class="max-w-[875px] mx-auto" :items-to-show="wWidth >= 768 ? 8 : wWidth <=420 ? 4 : 6"
                 :items-to-scroll="4" :wrap-around="true" :transition="500" snapAlign="start">
                 <Slide v-for="slide in 10" :key="slide">
                     <Link href="/" class="relative mx-auto text-center mt-4 px-2 cursor-pointer">
@@ -64,7 +64,16 @@ onMounted(() => {
                     <img class="mx-auto w-[400px]" src="https://picsum.photos/id/54/300/320"/>
                 </div>
                 <LikeSection/>
+                <div class="text-black font-extrabold">3 likes</div>
+                <div>
+                    <span class="text-black font-extrabold">NAME HERE</span>
+                    this is some text here
+                </div>
+                <button class="text-gray-500 font-extrabold py-1">
+                    View all 4 comments
+                </button>
             </div>
+            <div class="pb-20"></div>
         </div>  
     </MainLayout>
 </template>
