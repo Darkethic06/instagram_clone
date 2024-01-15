@@ -46,7 +46,8 @@ let showCreatePost = ref(false);
             <AccountPlusOutline :size="30" class="cursor-pointer px-4" />
 
         </div>
-        <div id="SideNav" class="fixed h-full z-30 bg-white xl:w-[280px] w-[80px] md:block hidden border-r border-r-gray-300">
+        <div id="SideNav"
+            class="fixed h-full z-30 bg-white xl:w-[280px] w-[80px] md:block hidden border-r border-r-gray-300">
             <Link href="/">
             <img class="xl:hidden block w-[25px] mt-10 ml-[25px] mb-10 cursor-pointer" src="/insta-logo-small.png" />
             <img class="xl:block hidden w-[120px] mt-10 ml-6 mb-10 cursor-pointer" src="/insta-logo.png" />
@@ -75,13 +76,13 @@ let showCreatePost = ref(false);
         </div>
 
         <div class="flex lg:justify-between bg-white h-full w-[100%-280px] lg:pl-[100px] overflow-auto">
-            <div class="mx-auto md:pt-6 pt-20" :class="$page.url === '/' ? 'lg:w-8/12 w-full' : 'max-w-[1200px]'">
+            <div class="mx-auto md:pt-6 pt-20" :class="$page.url === '/' ? 'lg:w-9/12 w-full' : 'max-w-[1200px]'">
                 <main>
                     <slot />
                 </main>
             </div>
 
-            <div v-if="$page.url === '/'" id="SuggestionsSection" class="lg:w-4/12 lg:block hidden text-black mt-10">
+            <div v-if="$page.url === '/'" id="SuggestionsSection" class="lg:w-3/12 lg:block hidden text-black mt-10">
                 <Link href="/" class="flex items-center justify-between max-w-[300px] ">
                 <div class="flex items-center">
                     <img src="https://picsum.photos/id/50/300/320" class="rounded-full z-10 w-[58px] h-[58px]" alt="" />
