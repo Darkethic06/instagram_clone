@@ -38,8 +38,8 @@ const getUploadedImage = (e) => {
                         src="https://picsum.photos/id/50/300/320" alt="" />
                 </label>
                 <input type="file" class="hidden" id="fileUser" @input="$event => getUploadedImage($event)">
-                <div class="ml-6 w-full">
-                    <div class="flex items-center md:mb-8 mb-5">
+                <div class="w-full ml-6">
+                    <div class="flex items-center mb-5 md:mb-8">
                         <div class="md:mr-6 mr-3 rounded-lg text-[22px]">
                             NAME HERE
                         </div>
@@ -53,7 +53,7 @@ const getUploadedImage = (e) => {
                         class="md:hidden mr-6 p-1 px-4 max-w-[260px] w-full rounded-lg text-[17px] font-extrabold bg-gray-100 hover:bg-gray-200">
                         Edit Profile
                     </button>
-                    <div class="md:block hidden">
+                    <div class="hidden md:block">
                         <div class="flex items-center text-[18px]">
                             <div class="mr-6">
                                 <span class="font-extrabold">4</span> posts
@@ -70,39 +70,39 @@ const getUploadedImage = (e) => {
             </div>
         </div>
         <div class="md:hidden">
-            <div class="w-full flex items-center justify-around border-t border-t-gray-300 mt-8">
-                <div class="text-center p-3">
+            <div class="flex items-center justify-around w-full mt-8 border-t border-t-gray-300">
+                <div class="p-3 text-center">
                     <div class="font-extrabold">4</div>
                     <div class="test-gray-400 font-semibold -mt-1.5">posts</div>
                 </div>
-                <div class="text-center p-3">
+                <div class="p-3 text-center">
                     <div class="font-extrabold">10</div>
                     <div class="test-gray-400 font-semibold -mt-1.5">followers</div>
                 </div>
-                <div class="text-center p-3">
+                <div class="p-3 text-center">
                     <div class="font-extrabold">40</div>
                     <div class="test-gray-400 font-semibold -mt-1.5">following</div>
                 </div>
             </div>
 
-            <div class="w-full flex items-center justify-between border-t border-t-gray-300">
-                <div class="p-3 w-1/4 flex justify-center border-t border-t-gray-900">
+            <div class="flex items-center justify-between w-full border-t border-t-gray-300">
+                <div class="flex justify-center w-1/4 p-3 border-t border-t-gray-900">
                     <Grid :size="27" fillColor="#0095F6" class="cursor-pointer" />
                 </div>
-                <div class="p-3 w-1/4 flex justify-center border-t border-t-gray-900">
+                <div class="flex justify-center w-1/4 p-3 border-t border-t-gray-900">
                     <PlayBoxOutline :size="27" fillColor="#8E8E8E" class="cursor-pointer" />
                 </div>
-                <div class="p-3 w-1/4 flex justify-center border-t border-t-gray-900">
+                <div class="flex justify-center w-1/4 p-3 border-t border-t-gray-900">
                     <BookmarkOutline :size="27" fillColor="#8E8E8E" class="cursor-pointer" />
                 </div>
-                <div class="p-3 w-1/4 flex justify-center border-t border-t-gray-900">
+                <div class="flex justify-center w-1/4 p-3 border-t border-t-gray-900">
                     <AccountBoxOutline :size="27" fillColor="#8E8E8E" class="cursor-pointer" />
                 </div>
             </div>
         </div>
 
         <div id="ContentSection" class="md:pr-1.5 lg:pl-1.0 md:pl-[90px]">
-            <div class="md:block mt-10 hidden border-t border-t-gray-300">
+            <div class="hidden mt-10 border-t md:block border-t-gray-300">
                 <div
                     class="flex items-center justify-content max-w-[600px] mx-auto font-extrabold text-gray-400 text-[15px]">
                     <div class="p-[17px] w-1/4 flex justify-center items-center border-t border-t-gray-900">
@@ -123,7 +123,7 @@ const getUploadedImage = (e) => {
                     </div>
                 </div>
             </div>
-            <div class="grid md:gap-4 gap-1 grid-cols-3 relative">
+            <div class="relative grid grid-cols-3 gap-1 md:gap-4">
                 <ContentOverlay :postByUser="postsByUser" @selectedPost="$event=>data.post = $event "/>
             </div>
         </div>

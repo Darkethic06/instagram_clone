@@ -33,5 +33,5 @@ let isHover = ref(false)
         <img src="https://picsum.photos/id/50/800/800" alt=""
          class="aspect-square mx-auto z-0 object-cover cursor-pointer"/>
     </div>
-    
+
 </template>
