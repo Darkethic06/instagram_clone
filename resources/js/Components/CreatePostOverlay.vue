@@ -68,29 +68,29 @@ const closeOverlay = () => {
 
 <template>
     <div id="OverlaySection" class="fixed z-50 top-0 left-0 w-full h-screen bg-[#000000] bg-opacity-60 p-3">
-        <button class="absolute right-3 cursor-pointer" @click="$event => closeOverlay()">
+        <button class="absolute cursor-pointer right-3" @click="$event => closeOverlay()">
             <Close :size="27" fillColor="#FFFFFF" />
         </button>
         <div class="mx-w-6xl h-[calc(100%-100px)] mx-auto mt-10 bg-white rounded-xl">
-            <div class="flex items-center justify-between w-full rounded-t-xl p-3 border-b border-b-gray-300">
+            <div class="flex items-center justify-between w-full p-3 border-b rounded-t-xl border-b-gray-300">
                 <ArrowLeft :size="30" fillColor="#000000" @click="$event => closeOverlay()" />
-                <div class="text-lg-6 font-extrabold">New reel</div>
-                <button class="text-lg text-blue-500 hover:text-gray-500 font-extrabold">
+                <div class="font-extrabold text-lg-6">New reel</div>
+                <button @click="$event=> createPostFunc()" class="text-lg font-extrabold text-blue-500 hover:text-gray-500">
                     Share
                 </button>
             </div>
             <div class="w-full md:flex h-[calc(100%-55px)] rounded-xl overflow-auto">
-                <div class="flex items-center bg-gray-100 w-full h-full overflow-hidden">
+                <div class="flex items-center w-full h-full overflow-hidden bg-gray-100">
                     <div v-if="!fileDisplay" class="flex flex-col items-center mx-auto">
                         <label for="file"
                             class="hover:bg-blue-700 bg-blue-500 rounded-lg p-2.5 text-white font-extrabold cursor-pointer">
                             Select From Computer
                         </label>
                         <input type="file" class="hidden" id="file" @input="$event => getUploadedImage($event)">
-                        <div v-if="error && error.file" class="text-red-500 text-center p-2 font-extrabold">{{ error.file }}
+                        <div v-if="error && error.file" class="p-2 font-extrabold text-center text-red-500">{{ error.file }}
                         </div>
                         <div v-if="!fileDisplay && isValidFile === false"
-                            class="text-red-500 text-center p-2 font-extrabold">
+                            class="p-2 font-extrabold text-center text-red-500">
                             File not accepted</div>
                     </div>
                     <img v-if="fileDisplay && isValidFile === true" class="min-w-[400px] p-4 mx-auto" :src="fileDisplay" />
@@ -102,33 +102,33 @@ const closeOverlay = () => {
                             <div class="ml-4 font-extrabold text-[15px]">NAME HERE</div>
                         </div>
                     </div>
-                    <div v-if="error & error.text" class="text-red-500 p-2 font-extrabold">{{ error.text }}</div>
+                    <div v-if="error & error.text" class="p-2 font-extrabold text-red-500">{{ error.text }}</div>
                     <div class="flex w-full max-h-[200px] bg-white border-b">
                         <textarea ref="textarea" v-model="form.text" placeholder="Write caption..." rows="10"
                             class="placeholder-gray-500 w-full border-0 mt-2 mb-2 z-50 focus:ring-0 text-gray-600 text-[15px]"></textarea>
                     </div>
-                    <div class="flex items-center justify-between border-b p-3">
+                    <div class="flex items-center justify-between p-3 border-b">
                         <div class="text-lg font-extrabold text-gray-500">
                             Add location
                         </div>
                         <MapMarkerOutline :size="27" />
                     </div>
 
-                    <div class="flex items-center justify-between border-b p-3">
+                    <div class="flex items-center justify-between p-3 border-b">
                         <div class="text-lg font-extrabold text-gray-500">
                             Accesibility
                         </div>
                         <ChevronDown :size="27" />
                     </div>
 
-                    <div class="flex items-center justify-between border-b p-3">
+                    <div class="flex items-center justify-between p-3 border-b">
                         <div class="text-lg font-extrabold text-gray-500">
                             Advanced Settings
                         </div>
                         <ChevronDown :size="27" />
                     </div>
 
-                    <div class="text-gray-500 mt-3 p-3 text-sm">
+                    <div class="p-3 mt-3 text-sm text-gray-500">
                         Your reel will be shared with your followers in their feeds and can be seen on your profile,
                         It may also appear in places such as Reels, where anyone can see it.
                     </div>

@@ -18,18 +18,18 @@ class FileService
         }
         $file = null;
 
-        $manager = new ImageManager(new Driver());
+        // $manager = new ImageManager::Driver();
         if ($file === 'user') {
-            $file = $manager->read($request->file('file'));
+            $file = ImageManager::imagick()->read($request->file('file'));
             $file = $file->resize(400, 400);
         } else {
-            $file = $manager->read($request->file('file'));
+            $file = ImageManager::imagick()->read($request->file('file'));
         }
         $ext = $request->file('file');
         $extension = $ext->getClientOriginalExtension();
         $name = time() . '.' . $extension;
-        $file->save(public_path() . '/file/' . $name);
-        $model->file = '/file/' . $name;
+        $file->save(public_path() . '/storage/file/' . $name);
+        $model->file = '/storage/file/' . $name;
 
         return $model;
     }
